@@ -10,7 +10,11 @@ We expect this to take around an hour.
 
 You'll be working on a tiny app that looks up airport information. In its current state, we render a list of all airports (around 6000), and have a basic typeahead search feature so the user can look up airports by searching by name, IATA, city, or country.
 
-Your goal is to improve this app in a way that it offers a better user experience and at the same time it also considers performance bottlenecks to make the overall experience much more efficient.
+The designer gave you this mock-up as a reference:
+
+![image](https://user-images.githubusercontent.com/144075/144594282-68de44cd-bef2-4d9d-8c5d-398862cbc964.png)
+
+Your goal is to improve this app as provided in the mockup in a way that it offers a better user experience, considers performance bottlenecks, and is also mobile responsive to make the overall experience much more efficient.
 
 ## Assumptions
 
