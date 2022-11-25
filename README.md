@@ -9,7 +9,7 @@ Youtube Link: https://www.youtube.com/watch?v=xKcTtp29Elc
 So to start approaching it correctly I broke down the goals into technical tasks that I approached in the implementation as shown in the video.
 
 ### Offers a better user experience
-- Add a container for the page, where it has margins and padding
+- Fix the container for the page, where it has margins and padding
 - Show airpots result counter
 - Display 2 airport results per row.
 
