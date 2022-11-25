@@ -1,41 +1,50 @@
-# Frontend Coding Challenge
+# Till Coding Challenge
 
-Our main goal for this exercise is to get an idea of how you are to work with and how you approach your engineering work. That insight is more important than your actual working solution at the end of this exercise.
+This is a demo project challenge that was already built using Next.js and had some modifications that were needed to be applied.
 
-Please record your screen and talk us through the coding exercise as you work through it. Don't hesitate to think out loud—that's the interesting part!
+*Watch the Demo video*
+Youtube Link: https://www.youtube.com/watch?v=2gsoJ030iAo
 
-We expect this to take around an hour.
+## Goals Breakdown
+So to start approaching it correctly I broke down the goals into technical tasks that I approached in the implementation as shown in the video.
 
-## Brief
+### Offers a better user experience
+- Add a container for the page, where it has margins and padding
+- Show airpots result counter
+- Display 2 airport results per row.
 
-You'll be working on a tiny app that looks up airport information. In its current state, we render a list of all airports (around 6000), and have a basic typeahead search feature so the user can look up airports by searching by name, IATA, city, or country.
+### Considers performance bottlenecks
+- Search debounce (500 ms)
+- Keeps re-fetching data from api when navigating to other screens for the initial load.
+- Lazy Loading / Pagination (Not implemented now - see Extra Questions)
+- Limit of number of airports to display on screen (100)
 
-The designer gave you this mock-up as a reference:
+### Mobile responsive
+- Padding and margins should be less on mobile
+- Stick to having 1 result per row
 
-![image](https://user-images.githubusercontent.com/144075/144594282-68de44cd-bef2-4d9d-8c5d-398862cbc964.png)
-
-Your goal is to improve this app as provided in the mockup in a way that it offers a better user experience, considers performance bottlenecks, and is also mobile responsive to make the overall experience much more efficient.
-
-## Assumptions
-
-- Tilla uses [Next.JS](http://nextjs.org) and TypeScript. It'd be cool if you use that same tech stack for this exercise.
-- The database is currently a JSON file with airport data. We don't expect you to move this into a database layer.
-- The IATA code is a unique identifier for an airport.
-- While we care more about your thought process than your outcome, we're still interested in how you write code. Don't cut corners there, and write the code as if you'd write a real-world, production-quality product.
-
-## Extra questions
-
-We'd love to hear your thoughts on some of these questions. Please don't spend more than a minute or two on each question.
-
+## Extra Questions
 - What are some edge cases you would take care of before shipping this to production?
+
+- [] The pagination is the most important part so it offers better user experience.
+- [] Cleaning up the search query before sending request to API from any special characters to enhance security (avoiding injection)
+- [] Install Redux.js Toolkit and use as proper state management for navigation between screens, and therefore the data can be cached in state memory to display the data and just do sync fetches for updating data if any. (In real-life airports data don't change that much, so we don't need to do lots of queries here for getting the data each time, except for the search query)
+- [] Securing the API to be only called with an access token from my app instead of anyone having access to it publicly (not login, but more an API key)
+- [] Database can be SQLite better than a Json file
+
 - What changes would you make to your solution to make it mobile responsive?
+
+- [] Add a sticky header, or drawer menu.
+- [] Improve user experiecne by doing more hover effects on cards that works well with mobile gestures
+- [] Maybe add flags for countries, so its more easy to detect what I am searching for. (We can also group airports by country)
+
+
 - What's important for you to work well in a fully remote team?
 
-## Deliverables
-
-- Invite [@pieterbeulque](https://github.com/pieterbeulque) and [@umartayyab](https://github.com/umartayyab) to a GitHub repo with your completed project
-- A video of your screen recording (unlisted YouTube video, Loom, … anything works)
-- Answers to the questions above can be either in the video or written down in the README of your repo
+- [] The company has a well organized process on what needs to be done, and when it needs to be done, and who is responsible for what (SCRUM workflow)
+- [] The developer has more focus time to work on tasks, and spend less time in meetings (Meeting should be short with a goal in mind, and not go off topic)
+- [] Overlap time with other engineers in an Async manner (Any developer is available to chat/discuss with any topic within a set of defined hours - normally 5+/- hours)
+- [] Product vision should always be updated and aligned with all engineers on the team so they are aware with each other's productivity work and impact.
 
 ## Getting Started
 
