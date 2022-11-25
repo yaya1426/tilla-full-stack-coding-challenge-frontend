@@ -1,7 +1,7 @@
 module.exports = {
-  purge: [
-    './pages/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: false,
   theme: {
@@ -11,4 +11,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-}
+};

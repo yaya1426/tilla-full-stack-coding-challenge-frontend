@@ -1,19 +1,52 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react'
+import axios from "axios";
+import { useEffect, useState } from "react";
 
-export const useApiData = <T>(path: string, defaultValue: any, dependencies = []): T => {
-  const [data, setData] = useState<T>(defaultValue)
+type ReturnState<T> = {
+  data: T;
+  loading: boolean;
+  error: any;
+};
+
+export const useApiData = <T>(
+  path: string,
+  defaultValue: any,
+  dependencies = [],
+  fetchData: boolean = true
+): ReturnState<T> => {
+  const [state, setState] = useState<ReturnState<T>>({
+    data: defaultValue,
+    loading: false,
+    error: null,
+  });
 
   useEffect(() => {
-    axios
-      .get<T>(path)
-      .catch((err) => err.response)
-      .then((response) => {
-        setData(response.data)
-      })
-  }, dependencies)
+    if (fetchData) {
+      setState({
+        ...state,
+        loading: true,
+      });
+      axios
+        .get<T>(path)
+        .catch((err) => {
+          setState({
+            ...state,
+            loading: false,
+            error: err.response,
+          });
+        })
+        .then((response) => {
+          if (response) {
+            setState({
+              ...state,
+              data: response.data,
+              loading: false,
+            });
+          }
+        });
+    }
+  }, dependencies);
 
-  return data
-}
+  return state;
+};
 
-export default useApiData
+export default useApiData;
